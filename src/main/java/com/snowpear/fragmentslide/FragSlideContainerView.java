@@ -298,7 +298,7 @@ public class FragSlideContainerView extends RelativeLayout {
      * @return FragSlideModel 索引自上而下为从0增长
      */
     private FragSlideModel getModelByIndex(int index){
-        if(index < mList.size()){
+        if(index >=0 && index < mList.size()){
             return mList.get(index);
         }
         return null;

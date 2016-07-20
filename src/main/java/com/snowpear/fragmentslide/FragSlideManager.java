@@ -81,7 +81,7 @@ public abstract class FragSlideManager<F extends Fragment, I> {
         this.mContainerView = containerView;
         mContainerView.setScrollBehindScale(0.5f);
         mContainerView.setFadePercent(0.2f);
-        mContainerView.setShadowDrawable(activity.getResources().getDrawable(R.drawable.shadow_left, null), 20);
+        mContainerView.setShadowDrawable(activity.getResources().getDrawable(R.drawable.shadow_left), 20);
         mContainerView.setFragmentManager(mActivity.getSupportFragmentManager());
         mContainerView.setOnPageChangedListener(new FragSlideContainerView.OnPageChangedListener() {
 

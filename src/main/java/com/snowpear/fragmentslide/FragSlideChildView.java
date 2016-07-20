@@ -142,7 +142,7 @@ public class FragSlideChildView extends RelativeLayout {
                 endDrag();
                 break;
         }
-        if (!mIsBeingDragged) {
+        if (mIsBeingDragged) {
             if (mVelocityTracker == null) {
                 mVelocityTracker = VelocityTracker.obtain();
             }
@@ -162,14 +162,14 @@ public class FragSlideChildView extends RelativeLayout {
             debug(TAG, "---onTouchEvent---view--top");
         }
 
-        final int action = ev.getAction();
+        final int action = MotionEventCompat.getActionMasked(ev);
 
         if (mVelocityTracker == null) {
             mVelocityTracker = VelocityTracker.obtain();
         }
         mVelocityTracker.addMovement(ev);
 
-        switch (action & MotionEventCompat.ACTION_MASK) {
+        switch (action) {
             case MotionEvent.ACTION_DOWN:
                 debug(TAG, "---onTouchEvent---Down");
                 completeScroll();//结束上一次触摸
